@@ -1,0 +1,46 @@
+<nav id="sidebarMenu" class=" d-md-block sidebar collapse bg-dark " >
+    <div class="sidebar-sticky pt-3">
+        <div class=" pb-3">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center text-light" href="/admin" >
+                <img src="<?php echo e(asset('images/favicon.png')); ?>" style="width: 40px;">
+                
+                <div class="sidebar-brand-text mx-3">
+                    Sunprored
+                    <small class=" d-block">
+                        v1.0
+                    </small>
+                </div>
+            </a>       
+        </div>
+        <hr class="sidebar-divider">
+
+        
+        <h6 class="sidebar-heading d-flex justify-content-between text-center text-light " style="font-size: 0.85rem;">            
+            <span class="fs-4 mb-2">     
+                <i class="fas fa-exclamation-triangle pr-1"></i>       
+                Incidencias
+            </span>
+        </h6>
+
+        <ul class="nav flex-column mb-2 ">
+        <li >
+            <a class="nav-link" href="<?php echo e(route('cliente.listar-incidencias-usuario')); ?>" > 
+                <button type="button" class="btn btn-outline-light btn-block">
+                    <i class="fas fa-list-ul"></i>
+                    Ver incidencias
+                </button>              
+            </a>
+          </li>
+          <li >
+            <a class="nav-link" href="<?php echo e(route('cliente.crear-incidencia-cliente')); ?>">
+                <button type="button" class="btn btn-outline-light btn-block ">
+                    <i class="fas fa-plus-circle"></i>
+                    Crear incidencia
+                </button>              
+            </a>
+          </li>
+          
+          
+        </ul>
+      </div>
+    </nav><?php /**PATH F:\laragon\www\SunproPrivado\resources\views/front/clientes/componentes/menu-lateral.blade.php ENDPATH**/ ?>
