@@ -157,7 +157,7 @@
                                                         </span>  
                                                     @else
                                                             {{$pvp1}}€ <small>und.</small> 
-                                                    @endif
+                                                    @endif                                         
 
                                                         <!--<span class=" d-block">{{'Compro ='. precioCliente(Auth::user()->cliente_id,$articulo->codigo)}}</span>-->
                                                     </th>

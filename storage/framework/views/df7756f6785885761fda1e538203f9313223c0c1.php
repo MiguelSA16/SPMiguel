@@ -158,7 +158,7 @@
                                                         </span>  
                                                     <?php else: ?>
                                                             <?php echo e($pvp1); ?>€ <small>und.</small> 
-                                                    <?php endif; ?>
+                                                    <?php endif; ?>                                         
 
                                                         <!--<span class=" d-block"><?php echo e('Compro ='. precioCliente(Auth::user()->cliente_id,$articulo->codigo)); ?></span>-->
                                                     </th>
