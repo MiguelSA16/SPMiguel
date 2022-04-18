@@ -1,10 +1,8 @@
-@extends('layouts.front.vertical')
-
-@section('titulo')
+<?php $__env->startSection('titulo'); ?>
     Contactanos
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('cuerpo')
+<?php $__env->startSection('cuerpo'); ?>
     <div class="container py-4">
         <!-- Titulo -->
         <div class="row subrayar">
@@ -58,35 +56,40 @@
             </div>
         </div>
         <div class="hr2"></div>
-        <form method="POST" action="{{ route('contacto') }}" class="py-4" id="form-contactos" >
+        <form method="POST" action="<?php echo e(route('contacto')); ?>" class="py-4" id="form-contactos" >
             <div class="row">
-                @csrf
+                <?php echo csrf_field(); ?>
                 <div class="form-group col-4">
-                    <input type="text" name="nombre" placeholder="Nombres" value='{{ old('nombre') }}' class=" form-control">
-                    {!! $errors->first('nombre', '<small class="text-danger">:message</small><br>') !!}
+                    <input type="text" name="nombre" placeholder="Nombres" value='<?php echo e(old('nombre')); ?>' class=" form-control">
+                    <?php echo $errors->first('nombre', '<small class="text-danger">:message</small><br>'); ?>
+
                 </div>
                 <div class="form-group col-4">
-                    <input type="text" name="email" placeholder="e-mail..." value='{{ old('email') }}' class=" form-control">
-                    {!! $errors->first('email', '<small class="text-danger">:message</small><br>') !!}
+                    <input type="text" name="email" placeholder="e-mail..." value='<?php echo e(old('email')); ?>' class=" form-control">
+                    <?php echo $errors->first('email', '<small class="text-danger">:message</small><br>'); ?>
+
                 </div>
                 <div class=" form-group col-4">
-                    <input type="number" name="subject" placeholder="Telefóno" value='{{ old('subject') }}' class=" form-control">
-                    {!! $errors->first('subject', '<small class="text-danger">:message</small><br>') !!}
+                    <input type="number" name="subject" placeholder="Telefóno" value='<?php echo e(old('subject')); ?>' class=" form-control">
+                    <?php echo $errors->first('subject', '<small class="text-danger">:message</small><br>'); ?>
+
                 </div>
                 <div class=" form-group col-12 ">
-                    <textarea name="content" rows="5" class=" form-control">{{ old('content') }}</textarea>
-                    {!! $errors->first('content', '<small class="text-danger">:message</small>') !!}
+                    <textarea name="content" rows="5" class=" form-control"><?php echo e(old('content')); ?></textarea>
+                    <?php echo $errors->first('content', '<small class="text-danger">:message</small>'); ?>
+
                 </div>
                 <div class="form-group col-12">
                     <div class="form-check">
                         <input type="checkbox" name="checkbox" class="form-check-input" }}>
                         <label class="form-check-label" for="checkbox">
                             He leído y acepto el tratamiento de los datos acorde a la
-                            <a class="text-sunpro text-decoration-none " href="{{ route('privacidad') }}" target="_black">
+                            <a class="text-sunpro text-decoration-none " href="<?php echo e(route('privacidad')); ?>" target="_black">
                                 POLITICA DE PRIVACIDAD
                             </a>
                         </label>
-                        {!! $errors->first('checkbox', '<br><small class="text-danger">:message</small>') !!}
+                        <?php echo $errors->first('checkbox', '<br><small class="text-danger">:message</small>'); ?>
+
                     </div>
                 </div>
                 <div class=" col-12">
@@ -95,7 +98,7 @@
                         class="btn btn-sunpro"
                         id="butonContactanos"
                     >
-                            @lang('send')
+                            <?php echo app('translator')->get('send'); ?>
                     </button>
                 </div>
 
@@ -121,4 +124,6 @@
 
 
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.front.vertical', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH F:\laragon\www\SPMiguel\resources\views/front/contactanos.blade.php ENDPATH**/ ?>
