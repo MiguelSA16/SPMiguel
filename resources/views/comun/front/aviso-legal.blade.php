@@ -1,38 +1,201 @@
-@extends('layouts.front.vertical')
-
-@section('cuerpo')
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center py-3 bd-title">
-                    AVISO LEGAL
-            </div>
-            <div class="hr2">
-            </div>
-            <div class="pt-4 subtitle">1. DATOS IDENTIFICATIVOS</div>
-            <p class="py-2">En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, a continuación se reflejan los siguientes datos: la empresa titular de dominio web es Sunpro Redes y Sistemas S.L,(en adelante Sunprored) con domicilio a estos efectos en Calle Electrónica, 24, 28923 Alcorcón, Madrid. Con número de CIF:B8087070926. Correo electrónico de contacto: info@sunprored.es</p>
-            <div class="subtitle py-2">2. USUARIOS</div>
-            <p>El acceso y/o uso de este portal de Sunprored atribuye la condición de USUARIO, que acepta, desde dicho acceso y/o uso, las Condiciones Generales de Uso aquí reflejadas. Las citadas Condiciones serán de aplicación independientemente de las Condiciones Generales de Contratación que en su caso resulten de obligado cumplimiento.</p>
-            <div class="subtitle py-2">3. USO DEL PORTAL</div>
-            <p class="py-2">Sunprored.es proporciona el acceso a multitud de informaciones, servicios, programas o datos (en adelante, “los contenidos”) en Internet pertenecientes a Sunprored.es o a sus licenciantes a los que el USUARIO pueda tener acceso. El USUARIO asume la responsabilidad del uso del portal. Dicha responsabilidad se extiende al registro que fuese necesario para acceder a determinados servicios o contenidos. En dicho registro el USUARIO será responsable de aportar información veraz y lícita. Como consecuencia de este registro, al USUARIO se le puede proporcionar una contraseña de la que será responsable, comprometiéndose a hacer un uso diligente y confidencial de la misma. El USUARIO se compromete a hacer un uso adecuado de los contenidos y servicios (como por ejemplo servicios de chat, foros de discusión o grupos de noticias) que Sunprored.es ofrece a través de su portal y con carácter enunciativo pero no limitativo, a no emplearlos para (i) incurrir en actividades ilícitas, ilegales o contrarias a la buena fe y al orden público; (ii) difundir contenidos o propaganda de carácter racista, xenófobo, pornográfico-ilegal, de apología del terrorismo o atentatorio contra los derechos humanos; (iii) provocar daños en los sistemas físicos y lógicos de Sunprored.es , de sus proveedores o de terceras personas, introducir o difundir en la red virus informáticos o cualesquiera otros sistemas físicos o lógicos que sean susceptibles de provocar los daños anteriormente mencionados; (iv) intentar acceder y, en su caso, utilizar las cuentas de correo electrónico de otros usuarios y modificar o manipular sus mensajes. Sunprored.es se reserva el derecho de retirar todos aquellos comentarios y aportaciones que vulneren el respeto a la dignidad de la persona, que sean discriminatorios, xenófobos, racistas, pornográficos, que atenten contra la juventud o la infancia, el orden o la seguridad pública o que, a su juicio, no resultaran adecuados para su publicación. En cualquier caso, Sunprored no será responsable de las opiniones vertidas por los usuarios a través de los foros, chats, u otras herramientas de participación.</p>
-            <div class="subtitle py-2">4. PROTECCIÓN DE DATOS</div>
-            <p class="py-2">Sunpro Redes y Sistemas S.L cumple con las directrices de la Ley Orgánica 15/1999 de 13 de diciembre de Protección de Datos de Carácter Personal, el Real Decreto 1720/2007 de 21 de diciembre por el que se aprueba el Reglamento de desarrollo de la Ley Orgánica y demás normativa vigente en cada momento, y vela por garantizar un correcto uso y tratamiento de los datos personales del usuario. Para ello, junto a cada formulario de recabo de datos de carácter personal, en los servicios que el usuario pueda solicitar a info@sunprored.es, hará saber al usuario de la existencia y aceptación de las condiciones particulares del tratamiento de sus datos en cada caso, informándole de la responsabilidad del fichero creado, la dirección del responsable, la posibilidad de ejercer sus derechos de acceso, rectificación, cancelación u oposición, la finalidad del tratamiento y las comunicaciones de datos a terceros en su caso. Asimismo, Sunprored informa que da cumplimiento a la Ley 34/2002 de 11 de julio, de Servicios de la Sociedad de la Información y el Comercio Electrónico y le solicitará su consentimiento al tratamiento de su correo electrónico con fines comerciales en cada momento.</p>
-            <div class="subtitle py-2">5. PROPIEDAD INTELECTUAL E INDUSTRIAL</div>
-            <p class="py-2">Sunprored por sí o como cesionaria, es titular de todos los derechos de propiedad intelectual e industrial desu página web, así como de los elementos contenidos en la misma (a título enunciativo, imágenes, sonido, audio, vídeo, software o textos; marcas o logotipos, combinaciones de colores, estructura y diseño, selección de materiales usados, programas de ordenador necesarios para su funcionamiento, acceso y uso, etc.), titularidad de Sunprored o bien de sus licenciantes. Todos los derechos reservados. En virtud de lo dispuesto en los artículos 8 y 32.1, párrafo segundo, de la Ley de Propiedad Intelectual, quedan expresamente prohibidas la reproducción, la distribución y la comunicación pública, incluida su modalidad de puesta a disposición, de la totalidad o parte de los contenidos de esta página web, con fines comerciales, en cualquier soporte y por cualquier medio técnico, sin la autorización de Sunprored. El USUARIO se compromete a respetar los derechos de Propiedad Intelectual e Industrial titularidad . Podrá visualizar los elementos del portal e incluso imprimirlos, copiarlos y almacenarlos en el disco duro de su ordenador o en cualquier otro soporte físico siempre y cuando sea, única y exclusivamente, para su uso personal y privado. El USUARIO deberá abstenerse de suprimir, alterar, eludir o manipular cualquier dispositivo de protección o sistema de seguridad que estuviera instalado en el las páginas de Sunprored.</p>
-            <div class="subtitle py-2">6. EXCLUSIÓN DE GARANTÍAS Y RESPONSABILIDAD</div>
-            <p class="py-2">Sunprored no se hace responsable, en ningún caso, de los daños y perjuicios de cualquier naturaleza que pudieran ocasionar, a título enunciativo: errores u omisiones en los contenidos, falta de disponibilidad del portal o la transmisión de virus o programas maliciosos o lesivos en los contenidos, a pesar de haber adoptado todas las medidas tecnológicas necesarias para evitarlo.</p>
-            <div class="subtitle py-2">7. MODIFICACIONES</div>
-            <p class="py-2">Sunprored se reserva el derecho de efectuar sin previo aviso las modificaciones que considere oportunas en su portal, pudiendo cambiar, suprimir o añadir tanto los contenidos y servicios que se presten a través de la misma como la forma en la que éstos aparezcan presentados o localizados en su portal.</p>
-            <div class="subtitle py-2">8. ENLACES</div>
-            <p class="py-2">En el caso de que en Sunprored.es se dispusiesen enlaces o hipervínculos hacía otros sitios de Internet, NNNNN no ejercerá ningún tipo de control sobre dichos sitios y contenidos. En ningún caso Sunprored asumirá responsabilidad alguna por los contenidos de algún enlace perteneciente a un sitio web ajeno, ni garantizará la disponibilidad técnica, calidad, fiabilidad, exactitud, amplitud, veracidad, validez y constitucionalidad de cualquier material o información contenida en ninguno de dichos hipervínculos u otros sitios de Internet. Igualmente la inclusión de estas conexiones externas no implicará ningún tipo de asociación, fusión o participación con las entidades conectadas.</p>
-            <div class="subtitle py-2">9. DERECHO DE EXCLUSIÓN</div>
-            <p class="py-2">Sunprored se reserva el derecho a denegar o retirar el acceso a portal y/o los servicios ofrecidos sin necesidad de pre aviso, a instancia propia o de un tercero, a aquellos usuarios que incumplan las presentes Condiciones Generales de Uso.</p>
-            <div class="subtitle py-2">10.GENERALIDADES</div>
-            <p class="py-2">Sunprored perseguirá el incumplimiento de las presentes condiciones así como cualquier utilización indebida de su portal ejerciendo todas las acciones civiles y penales que le puedan corresponder en derecho.</p>
-            <div class="subtitle py-2">11.MODIFICACIÓN DE LAS PRESENTES CONDICIONES Y DURACIÓN</div>
-            <p class="py-2">Sunprored podrá modificar en cualquier momento las condiciones aquí determinadas, siendo debidamente publicadas como aquí aparecen. La vigencia de las citadas condiciones irá en función de su exposición y estarán vigentes hasta debidamente publicadas. que sean modificadas por otras.</p>
-            <div class="subtitle py-2">12. LEGISLACIÓN APLICABLE Y JURISDICCIÓN</div>
-            <p class="py-2">La relación entre Sunprored y el USUARIO se regirá por la normativa española vigente y cualquier controversia se someterá a los Juzgados y tribunales de la ciudad de Madrid. Aviso Legal redactado siguiendo el: Modelo de Aviso Legal web de España</p>
-
-        </div>
-    </div>
+@extends('layouts.front.vertical')
+
+
+
+@section('cuerpo')
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-12 text-center py-3 bd-title">
+
+            AVISO LEGAL
+
+        </div>
+
+        <div>
+            <p class="subtitle py-2"><b>LEY DE LOS SERVICIOS DE LA SOCIEDAD DE LA INFORMACIÓN (LSSI)</b> </p>
+            <p>
+                Sunpro Redes y Sistemas, s.l., responsable del sitio web, en adelante RESPONSABLE,
+                pone a disposición de los usuarios el presente documento, con el que pretende dar
+                cumplimiento a las obligaciones dispuestas en la Ley 34/2002, de 11 de julio, de Servicios
+                de la Sociedad de la Información y de Comercio Electrónico (LSSICE), BOE N.º 166, así
+                como informar a todos los usuarios del sitio web respecto a cuáles son las condiciones de
+                uso.
+                <br>
+                Toda persona que acceda a este sitio web asume el papel de usuario, comprometiéndose a
+                la observancia y cumplimiento riguroso de las disposiciones aquí dispuestas, así como a
+                cualquier otra disposición legal que fuera de aplicación.
+                <br>
+                Sunpro Redes y Sistemas, s.l. se reserva el derecho de modificar cualquier tipo de
+                información que pudiera aparecer en el sitio web, sin que exista obligación de preavisar o
+                poner en conocimiento de los usuarios dichas obligaciones, entendiéndose como suficiente
+                la publicación en el sitio web de Sunpro Redes y Sistemas, s.l..
+            </p>
+        </div>
+
+
+        <div>
+            <p class="subtitle py-2"> <b> 1. DATOS IDENTIFICATIVOS</b></p>
+            <p>
+                Nombre de dominio: sunprored.es <br>
+                Nombre comercial: Sunpro Redes y Sistemas <br>
+                Denominación social: Sunpro Redes y Sistemas, s.l. <br>
+                NIF: B87070926 <br>
+                Domicilio social: Pol. Ind. Urtinsa, C/ Electrónica, nº 24, 28923 - Alcorcón (MADRID) <br>
+                Teléfono: 915007963 <br>
+                E-mail: <a class="text-primary" href="mailto:contabilidad@sunprored.es">contabilidad@sunprored.es</a>
+            </p>
+        </div>
+
+        <div>
+            <p class="subtitle py-2"><b>2. DERECHOS DE PROPIEDAD INTELECTUAL E INDUSTRIAL</b> </p>
+            <p>
+                El sitio web, incluyendo a título enunciativo pero no limitativo su programación, edición,
+                compilación y demás elementos necesarios para su funcionamiento, los diseños, logotipos,
+                texto y/o gráficos, son propiedad del RESPONSABLE o, si es el caso, dispone de licencia o
+                autorización expresa por parte de los autores. Todos los contenidos del sitio web se
+                encuentran debidamente protegidos por la normativa de propiedad intelectual e industrial,
+                así como inscritos en los registros públicos correspondientes. <br>
+                Independientemente de la finalidad para la que fueran destinados, la reproducción total o
+                parcial, uso, explotación, distribución y comercialización, requiere en todo caso la
+                autorización escrita previa por parte del RESPONSABLE. Cualquier uso no autorizado
+                previamente se considera un incumplimiento grave de los derechos de propiedad
+                intelectual o industrial del autor. <br>
+                Los diseños, logotipos, texto y/o gráficos ajenos al RESPONSABLE y que pudieran aparecer en el sitio web, pertenecen a sus respectivos propietarios, siendo ellos mismos
+                responsables de cualquier posible controversia que pudiera suscitarse respecto a los
+                mismos. El RESPONSABLE autoriza expresamente a que terceros puedan redirigir
+                directamente a los contenidos concretos del sitio web, y en todo caso redirigir al sitio web
+                principal de sunprored.es. <br>
+                El RESPONSABLE reconoce a favor de sus titulares los correspondientes derechos de
+                propiedad intelectual e industrial, no implicando su sola mención o aparición en el sitio
+                web la existencia de derechos o responsabilidad alguna sobre los mismos, como tampoco
+                respaldo, patrocinio o recomendación por parte del mismo. <br>
+                Para realizar cualquier tipo de observación respecto a posibles incumplimientos de los
+                derechos de propiedad intelectual o industrial, así como sobre cualquiera de los contenidos
+                del sitio web, puede hacerlo a través del correo electrónico contabilidad@sunprored.es.
+            </p>
+        </div>
+
+        <div>
+            <p class="subtitle py-2"><b>3. EXENCIÓN DE RESPONSABILIDADES</b> </p>
+            <p>
+                El sitio web, incluyendo a título enunciativo pero no limitativo su programación, edición,
+                compilación y demás elementos necesarios para su funcionamiento, los diseños, logotipos,
+                texto y/o gráficos, son propiedad del RESPONSABLE o, si es el caso, dispone de licencia o
+                autorización expresa por parte de los autores. Todos los contenidos del sitio web se
+                encuentran debidamente protegidos por la normativa de propiedad intelectual e industrial,
+                así como inscritos en los registros públicos correspondientes. <br>
+                Independientemente de la finalidad para la que fueran destinados, la reproducción total o
+                parcial, uso, explotación, distribución y comercialización, requiere en todo caso la
+                autorización escrita previa por parte del RESPONSABLE. Cualquier uso no autorizado
+                previamente se considera un incumplimiento grave de los derechos de propiedad
+                intelectual o industrial del autor. <br>
+                Los diseños, logotipos, texto y/o gráficos ajenos al RESPONSABLE y que pudieran aparecer en el sitio web, pertenecen a sus respectivos propietarios, siendo ellos mismos
+                responsables de cualquier posible controversia que pudiera suscitarse respecto a los
+                mismos. El RESPONSABLE autoriza expresamente a que terceros puedan redirigir
+                directamente a los contenidos concretos del sitio web, y en todo caso redirigir al sitio web
+                principal de sunprored.es. <br>
+                El RESPONSABLE reconoce a favor de sus titulares los correspondientes derechos de
+                propiedad intelectual e industrial, no implicando su sola mención o aparición en el sitio
+                web la existencia de derechos o responsabilidad alguna sobre los mismos, como tampoco
+                respaldo, patrocinio o recomendación por parte del mismo. <br>
+                Para realizar cualquier tipo de observación respecto a posibles incumplimientos de los
+                derechos de propiedad intelectual o industrial, así como sobre cualquiera de los contenidos
+                del sitio web, puede hacerlo a través del correo electrónico contabilidad@sunprored.es.
+            </p>
+        </div>
+
+        <div>
+            <p class="subtitle py-2"><b>3. EXENCIÓN DE RESPONSABILIDADES</b> </p>
+            <p>
+                El RESPONSABLE se exime de cualquier tipo de responsabilidad derivada de la información
+                publicada en su sitio web siempre que no tenga conocimiento efectivo de que esta
+                información haya sido manipulada o introducida por un tercero ajeno al mismo o, si lo
+                tiene, haya actuado con diligencia para retirar los datos o hacer imposible el acceso a
+                ellos.
+            </p>
+        </div>
+
+        <div>
+            <p class="subtitle py-2"><b>Uso de Cookies</b> </p>
+            <p>
+                Este sitio web puede utilizar cookies técnicas (pequeños archivos de información que el
+                servidor envía al ordenador de quien accede a la página) para llevar a cabo determinadas
+                funciones que son consideradas imprescindibles para el correcto funcionamiento y
+                visualización del sitio. Las cookies utilizadas tienen, en todo caso, carácter temporal, con
+                la única finalidad de hacer más eficaz la navegación, y desaparecen al terminar la sesión
+                del usuario. En ningún caso, estas cookies proporcionan por sí mismas datos de carácter
+                personal y no se utilizarán para la recogida de los mismos. <br>
+                Mediante el uso de cookies también es posible que el servidor donde se encuentra la web
+                reconozca el navegador utilizado por el usuario con la finalidad de que la navegación sea
+                más sencilla, permitiendo, por ejemplo, el acceso de los usuarios que se hayan registrado
+                previamente a las áreas, servicios, promociones o concursos reservados exclusivamente a
+                ellos sin tener que registrarse en cada visita. También se pueden utilizar para medir la
+                audiencia, parámetros de tráfico, controlar el progreso y número de entradas, etc., siendo
+                en estos casos cookies prescindibles técnicamente, pero beneficiosas para el usuario. Este
+                sitio web no instalará cookies prescindibles sin el consentimiento previo del usuario.
+                El usuario tiene la posibilidad de configurar su navegador para ser alertado de la recepción
+                de cookies y para impedir su instalación en su equipo. Por favor, consulte las instrucciones
+                de su navegador para ampliar esta información.
+            </p>
+        </div>
+
+        <div>
+            <p class="subtitle py-2"><b>Política de enlaces</b> </p>
+            <p>
+                Desde el sitio web, es posible que se redirija a contenidos de terceros sitios web. Dado
+                que el RESPONSABLE no puede controlar siempre los contenidos introducidos por terceros
+                en sus respectivos sitios web, no asume ningún tipo de responsabilidad respecto a dichos
+                contenidos. En todo caso, procederá a la retirada inmediata de cualquier contenido que
+                pudiera contravenir la legislación nacional o internacional, la moral o el orden público,
+                procediendo a la retirada inmediata de la redirección a dicho sitio web, poniendo en conocimiento de las autoridades competentes el contenido en cuestión. <br>
+                El RESPONSABLE no se hace responsable de la información y contenidos almacenados, a
+                título enunciativo pero no limitativo, en foros, chats, generadores de blogs, comentarios,
+                redes sociales o cualquier otro medio que permita a terceros publicar contenidos de forma
+                independiente en la página web del RESPONSABLE. Sin embargo, y en cumplimiento de lo
+                dispuesto en los artículos 11 y 16 de la LSSICE, se pone a disposición de todos los
+                usuarios, autoridades y fuerzas de seguridad, colaborando de forma activa en la retirada
+                o, en su caso, bloqueo de todos aquellos contenidos que puedan afectar o contravenir la
+                legislación nacional o internacional, los derechos de terceros o la moral y el orden público.
+                En caso de que el usuario considere que existe en el sitio web algún contenido que pudiera
+                ser susceptible de esta clasificación, se ruega lo notifique de forma inmediata al
+                administrador del sitio web. <br>
+                Este sitio web se ha revisado y probado para que funcione correctamente. En principio,
+                puede garantizarse el correcto funcionamiento los 365 días del año, 24 horas al día. Sin
+                embargo, el RESPONSABLE no descarta la posibilidad de que existan ciertos errores de
+                programación, o que acontezcan causas de fuerza mayor, catástrofes naturales, huelgas o
+                circunstancias semejantes que hagan imposible el acceso a la página web.
+            </p>
+        </div>
+
+        <div>
+            <p class="subtitle py-2"><b>Direcciones IP</b> </p>
+            <p>
+                Los servidores del sitio web podrán detectar de manera automática la dirección IP y el
+                nombre de dominio utilizados por el usuario. Una dirección IP es un número asignado
+                automáticamente a un ordenador cuando este se conecta a Internet. Toda esta
+                información se registra en un fichero de actividad del servidor que permite el posterior
+                procesamiento de los datos con el fin de obtener mediciones únicamente estadísticas que
+                permitan conocer el número de impresiones de páginas, el número de visitas realizadas a
+                los servidores web, el orden de visitas, el punto de acceso, etc.
+            </p>
+        </div>
+
+        <div>
+            <p class="subtitle py-2"><b>4. LEY APLICABLE Y JURISDICCIÓN</b> </p>
+            <p>
+                Para la resolución de todas las controversias o cuestiones relacionadas con el presente
+                sitio web o de las actividades en él desarrolladas, será de aplicación la legislación
+                española, a la que se someten expresamente las partes, siendo competentes para la
+                resolución de todos los conflictos derivados o relacionados con su uso los Juzgados y
+                Tribunales del domicilio del USUARIO o el lugar del cumplimiento de la obligación.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
 @endsection
