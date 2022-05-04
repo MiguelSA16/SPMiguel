@@ -1,63 +1,23 @@
 @extends('layouts.front.vertical')
-
-
-
-
-
 @section('cuerpo')
-
-
-
-
-
 <div class="container">
-
-
     <div class="row">
-
-
         <div class="col-12 text-center py-3 bd-title">POLÍTICA DE PRIVACIDAD</div>
-
-
     </div>
-
-
     <div class="hr2">
-
-
     </div>
-
-
     <div class="py-4 subtitle">
-
-
         <h5>1. INFORMACIÓN AL USUARIO</h3>
-
-
     </div>
-
-
     <div>
-
-
         <p><b class="h5">Sunpro Redes y Sistemas S.L.</b>, en adelante RESPONSABLE, es el Responsable del tratamiento de
             los datos personales del Usuario y le informa que estos datos serán tratados de conformidad con lo dispuesto
             en el Reglamento (UE) 2016/679 de 27 de abril (GDPR) y la Ley Orgánica 3/2018 de 5 de diciembre (LOPDGDD),
             por lo que se le facilita la siguiente información del tratamiento:</p>
-
-
     </div>
-
-
     <p></p>
-
-
     <div>
-
-
         <ul>
-
-
             <li>Remisión de comunicaciones comerciales publicitarias por email, fax, SMS, MMS, comunidades sociales o
                 cualquier otro medio electrónico o físico, presente o futuro, que posibilite realizar comunicaciones
                 comerciales. Estas comunicaciones serán realizadas por el RESPONSABLE y relacionadas sobre sus productos

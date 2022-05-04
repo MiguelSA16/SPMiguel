@@ -1,11 +1,10 @@
-@extends('layouts.front.vertical')
+<?php $__env->startSection('titulo'); ?>
+    <?php echo e($articulo->nombre); ?>
 
-@section('titulo')
-    {{$articulo->nombre}}
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('cuerpo')
-    @include('comun.front.camino-migas')
+<?php $__env->startSection('cuerpo'); ?>
+    <?php echo $__env->make('comun.front.camino-migas', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <div class="container-fluid py-4 ">
         <div class="container">
             <div class="row">
@@ -14,7 +13,7 @@
                     <div class="row text-center">
                         <div class="col-md-12 pb-2">                   
                             <h1 class="title">
-                                {{$articulo->nombre}}                        
+                                <?php echo e($articulo->nombre); ?>                        
                             </h1>
                             <p class="sub-subtitle  ">
                                 Articulos al por mayor en Madrid
@@ -28,7 +27,7 @@
                     <div class="row">
                         <div class="col-5">
                             <div class=" bg-white">
-                                <img src="{{asset('images/articulos/'.$articulo->imagen)}}" class=" img-fluid w-100 " />
+                                <img src="<?php echo e(asset('images/articulos/'.$articulo->imagen)); ?>" class=" img-fluid w-100 " />
                             </div>                     
                         </div> 
                         <div class="col-7">                    
@@ -42,7 +41,8 @@
                                             Nombre:
                                         </th>
                                         <td class="text-muted border-0" colspan="3" >
-                                            {{$articulo->nombre}}
+                                            <?php echo e($articulo->nombre); ?>
+
                                         </td>
                                     </tr>
                                     <tr>
@@ -51,37 +51,38 @@
                                         </th>
                                         <td class="text-muted">
                                             <span class="badge badge-ref size-13">
-                                                {{$articulo->codigo}}
+                                                <?php echo e($articulo->codigo); ?>
+
                                             </span>
                                         </td>    
                                         <th class="text-uppercase">
                                             F. Tecnica:
                                         </th>
 
-                                    @if ($articulo->pdf == '-')
+                                    <?php if($articulo->pdf == '-'): ?>
                                         <td class="text-muted"> 
                                             <span class=" badge badge-warning size-13">
                                                 <i class="far fa-file-pdf text-danger" style="font-size:18px;"></i> 
                                                 NO DISPONIBLE 
                                             </span>
                                         </td>
-                                    @else
+                                    <?php else: ?>
                                         <td class="text-muted" > 
-                                            <a href="{{asset('pdfs/'.$articulo->pdf)}}" class="text-decoration-none" target="_black">                                                   
+                                            <a href="<?php echo e(asset('pdfs/'.$articulo->pdf)); ?>" class="text-decoration-none" target="_black">                                                   
                                                 <span class=" badge badge-dark size-13 ">                             
                                                     <i class="far fa-file-pdf text-danger" style="font-size:18px;"></i> 
                                                     DESCARGAR PDF
                                                 </span> 
                                             </a>         
                                         </td>
-                                    @endif
+                                    <?php endif; ?>
                                     </tr>
                                     <tr>
                                         <th class="text-uppercase border-0">
                                             Certificado:
                                         </th>
 
-                                    @if ($articulo->certificado == '-')
+                                    <?php if($articulo->certificado == '-'): ?>
                                         <td class="text-muted" > 
                                         <td class="text-muted" colspan="3"> 
                                             <span class=" badge badge-warning size-13">
@@ -89,52 +90,52 @@
                                                 NO DISPONIBLE 
                                             </span>
                                         </td>
-                                    @else
+                                    <?php else: ?>
                                         <td class="text-muted" colspan="3"> 
-                                            <a href="{{asset('certificados/'.$articulo->certificado)}}" class="text-decoration-none" target="_black">                                                   
+                                            <a href="<?php echo e(asset('certificados/'.$articulo->certificado)); ?>" class="text-decoration-none" target="_black">                                                   
                                                 <span class=" badge badge-dark size-13 ">                             
                                                     <i class="far fa-file-pdf text-danger" style="font-size:18px;"></i> 
                                                     DESCARGAR CERTIFICADO
                                                 </span> 
                                             </a>         
                                         </td>
-                                    @endif
+                                    <?php endif; ?>
                                     </tr>
                                     <tr >
                                         <th class="text-uppercase ">
                                             Color:
                                         </th>
                                         <td class="text-muted"> 
-                                            {{$articulo->color}} 
+                                            <?php echo e($articulo->color); ?> 
                                         </td>
                                         <th class="text-uppercase ">
                                             Medida:
                                         </th>
                                         <td class="text-muted"> 
-                                            {{$articulo->longitud}} 
+                                            <?php echo e($articulo->longitud); ?> 
                                         </td>
                                     </tr>
 
                                     <!-- Precios Cliente -->
-                                    @if (Route::has('login'))
-                                        @auth
-                                            @if (Auth::user()->role_id == 3)
+                                    <?php if(Route::has('login')): ?>
+                                        <?php if(auth()->guard()->check()): ?>
+                                            <?php if(Auth::user()->role_id == 3): ?>
                                                 <tr class=" border-bottom">
                                                     <th class="text-uppercase ">
                                                         Precio:
                                                     </th>
                                                     <!--Codigo antiguo-->
                                                     <th class="text-primary"> 
-                                                        @php
+                                                        <?php
                                                             $pvp1 = number_format($articulo->pvp1,2);
-                                                        @endphp
-                                                        @if ($pvp1 == 0.00)
+                                                        ?>
+                                                        <?php if($pvp1 == 0.00): ?>
                                                             <span class=" badge-warning badge-pill">
                                                                 Consultar precio
                                                             </span>    
-                                                        @else
-                                                            {{$pvp1}} € <small>und.</small> 
-                                                        @endif
+                                                        <?php else: ?>
+                                                            <?php echo e($pvp1); ?> € <small>und.</small> 
+                                                        <?php endif; ?>
                                                     </th>
                                                      <!--Fin Codigo antiguo-->
                                                         
@@ -142,118 +143,119 @@
                                                         stock:
                                                     </th>
                                                     <th style="padding-bottom: 5px; padding-top: 5px;"> 
-                                                        @if ($articulo->stock[0]->total == '' || $articulo->stock[0]->total == 0 )
+                                                        <?php if($articulo->stock[0]->total == '' || $articulo->stock[0]->total == 0 ): ?>
                                                             <span>
                                                                 <i class="fas fa-battery-empty text-danger" style=" font-size:35px; "></i>   
                                                             </span>
-                                                        @elseif($articulo->stock[0]->total < 0)
+                                                        <?php elseif($articulo->stock[0]->total < 0): ?>
                                                             <i class="fas fa-battery-empty text-danger" style=" font-size:35px; "></i>   
-                                                        @else
-                                                            @if(isset($consumo[0]))
-                                                                @if ($articulo->stock[0]->total > $consumo[0]->avisar)
+                                                        <?php else: ?>
+                                                            <?php if(isset($consumo[0])): ?>
+                                                                <?php if($articulo->stock[0]->total > $consumo[0]->avisar): ?>
                                                                     <i class="fas fa-battery-full text-success" style=" font-size:35px;  "></i>
-                                                                @elseif($articulo->stock[0]->total < $consumo[0]->avisar)
+                                                                <?php elseif($articulo->stock[0]->total < $consumo[0]->avisar): ?>
                                                                     <i class="fas fa-battery-half " style=" color:#f8bf3b; font-size:35px;"></i>
-                                                                @elseif($articulo->stock[0]->total == $consumo[0]->avisar)
+                                                                <?php elseif($articulo->stock[0]->total == $consumo[0]->avisar): ?>
                                                                     <i class="fas fa-battery-full text-success" style=" font-size:35px;  "></i>
-                                                                @endif
-                                                            @elseif(!isset($consumo[0]))
-                                                                @if($articulo->stock[0]->total)    
+                                                                <?php endif; ?>
+                                                            <?php elseif(!isset($consumo[0])): ?>
+                                                                <?php if($articulo->stock[0]->total): ?>    
                                                                     <i class="fas fa-battery-full text-success" style=" font-size:35px;  "></i>
-                                                                @endif
-                                                            @endif
-                                                        @endif  
+                                                                <?php endif; ?>
+                                                            <?php endif; ?>
+                                                        <?php endif; ?>  
                                                     </th>
                                                 </tr>                                                
-                                            @elseif(Auth::user()->role_id == 4 || Auth::user()->role_id == 1)     
+                                            <?php elseif(Auth::user()->role_id == 4 || Auth::user()->role_id == 1): ?>     
                                                 <tr class=" border-bottom">
                                                     <th class="text-uppercase ">
                                                         Precio:
                                                     </th>
                                                     <th class="text-primary"> 
-                                                        @php
+                                                        <?php
                                                             $pvp1 = number_format($articulo->pvp1,2);
-                                                        @endphp
-                                                        @if ($pvp1 == 0.00)
+                                                        ?>
+                                                        <?php if($pvp1 == 0.00): ?>
                                                             <span class=" badge-warning badge-pill">
                                                                 Consultar precio
                                                             </span>    
-                                                        @else
-                                                            {{$pvp1}} € <small>und.</small> 
-                                                        @endif
+                                                        <?php else: ?>
+                                                            <?php echo e($pvp1); ?> € <small>und.</small> 
+                                                        <?php endif; ?>
                                                     </th>
                                                     <th class="text-uppercase ">
                                                         stock:
                                                     </th>  
                                                         <th style="font-size: 18px; padding-top: 8px;"> 
-                                                        @if ($articulo->stock[0]->total == '' || $articulo->stock[0]->total == 0 )
+                                                        <?php if($articulo->stock[0]->total == '' || $articulo->stock[0]->total == 0 ): ?>
                                                             <span class="text-danger">
                                                                 0 <small>und.</small>  
                                                             </span>
-                                                        @elseif($articulo->stock[0]->total < 0)
+                                                        <?php elseif($articulo->stock[0]->total < 0): ?>
                                                             <span class="text-danger">
-                                                                {{$articulo->stock[0]->total}} <small>und.</small>  
+                                                                <?php echo e($articulo->stock[0]->total); ?> <small>und.</small>  
                                                             </span>
-                                                        @else
+                                                        <?php else: ?>
                                                             <span class="text-success">
-                                                                {{$articulo->stock[0]->total}} <small>und.</small>  
+                                                                <?php echo e($articulo->stock[0]->total); ?> <small>und.</small>  
                                                             </span>
-                                                        @endif       
+                                                        <?php endif; ?>       
                                                     </th>    
                                                 </tr>  
-                                            @endif         
-                                        @endauth
-                                    @endif
+                                            <?php endif; ?>         
+                                        <?php endif; ?>
+                                    <?php endif; ?>
                                 </tbody>
                             </table>
                         </div>   
                     </div>
                 </div>
 
-                @if($longitudes->count() != 0)
+                <?php if($longitudes->count() != 0): ?>
                 <div class="col-6">
                     <p class="subtitle pt-3 pb-2 font-weight-bold">
                         Medidas Disponibles:
                     </p> 
-                    @foreach ($longitudes as $longitud)
-                        <a href="{{url('articulo/'.$longitud->slug.'/ver') }}" class="text-decoration-none">
-                            <button class=" btn btn-outline-sunpro py-0 my-1">{{$longitud->longitud}}</button>
+                    <?php $__currentLoopData = $longitudes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $longitud): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <a href="<?php echo e(url('articulo/'.$longitud->slug.'/ver')); ?>" class="text-decoration-none">
+                            <button class=" btn btn-outline-sunpro py-0 my-1"><?php echo e($longitud->longitud); ?></button>
                         </a>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
-                @endif
-                @if($anchos->count() != 0)
+                <?php endif; ?>
+                <?php if($anchos->count() != 0): ?>
                 <div class=" col-6">
                     <p class="subtitle pt-3 pb-2 font-weight-bold"> 
                         Anchos Disponibles:
                     </p> 
-                    @foreach ($anchos as $ancho)
-                        <a href="{{url('articulo/'.$ancho->slug.'/ver') }}" class="text-decoration-none">
-                            <button class=" btn btn-outline-primary py-0 my-1">{{$ancho->ancho}}</button>
+                    <?php $__currentLoopData = $anchos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ancho): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <a href="<?php echo e(url('articulo/'.$ancho->slug.'/ver')); ?>" class="text-decoration-none">
+                            <button class=" btn btn-outline-primary py-0 my-1"><?php echo e($ancho->ancho); ?></button>
                         </a>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
 
-                @endif  
-                @if($colores->count() != 0)
+                <?php endif; ?>  
+                <?php if($colores->count() != 0): ?>
                 <div class=" col-6">
                     <p class="subtitle pt-3 pb-2 font-weight-bold"> 
                         Colores Disponibles:
                     </p> 
-                    @foreach ($colores as $color)
-                        <a href="{{url('articulo/'.$color->slug.'/ver') }}" class="text-decoration-none">
-                            <button class=" btn btn-outline-{{$color->color}} py-0 my-1">{{$color->color}}</button>
+                    <?php $__currentLoopData = $colores; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $color): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <a href="<?php echo e(url('articulo/'.$color->slug.'/ver')); ?>" class="text-decoration-none">
+                            <button class=" btn btn-outline-<?php echo e($color->color); ?> py-0 my-1"><?php echo e($color->color); ?></button>
                         </a>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
 
-                @endif
+                <?php endif; ?>
                 <div class="col-12">
                     <p class="subtitle pt-3 pb-2 font-weight-bold">    
                         Descripcion:
                     </p> 
                     <span>
-                        {!!$articulo->descripcion!!}
+                        <?php echo $articulo->descripcion; ?>
+
                     </span>
                 </div>
             </div>
@@ -262,7 +264,7 @@
 
 
 
-    @if($art_relacionados->count() != 0)
+    <?php if($art_relacionados->count() != 0): ?>
     <div class="container-fluid py-4 bg-white">
         <div class="container">
             <div class="row">  
@@ -271,35 +273,37 @@
                         Otros Clientes Tambien Compraron:
                     </p> 
                     <div class="row">
-                        @foreach ($art_relacionados as $art_relacionado)
+                        <?php $__currentLoopData = $art_relacionados; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $art_relacionado): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                            <div class="col-2 py-1 ">
-                                <a href="{{url('articulo/'.$art_relacionado->slug.'/ver')}}" class=" text-decoration-none">  
-                                    <div class="card border-success" data-toggle="tooltip" data-placement="top" title="{{$art_relacionado->nombre}}">
+                                <a href="<?php echo e(url('articulo/'.$art_relacionado->slug.'/ver')); ?>" class=" text-decoration-none">  
+                                    <div class="card border-success" data-toggle="tooltip" data-placement="top" title="<?php echo e($art_relacionado->nombre); ?>">
                                         <div class="card-imagen border-0">
-                                            <img src="{{url('/images/articulos/'.$art_relacionado->imagen)}}" alt="{{$art_relacionado->nombre}}" class=" img-fluid p-2">
+                                            <img src="<?php echo e(url('/images/articulos/'.$art_relacionado->imagen)); ?>" alt="<?php echo e($art_relacionado->nombre); ?>" class=" img-fluid p-2">
                                         </div>
                                         <div class="card-body p-2 bg-success text-center">
-                                            @php
+                                            <?php
                                             if (strlen($art_relacionado->nombre) > 30) {
                                                 $nombre = substr($art_relacionado->nombre,0,30).'...';
                                             }else{
                                                 $nombre = $art_relacionado->nombre;
                                             }                                           
 
-                                            @endphp
+                                            ?>
                                             <span class=" text-white " >
-                                                {{$nombre}}
+                                                <?php echo e($nombre); ?>
+
                                             </span>
                                         </div>	
                                     </div>     
                                 </a>  
                             </div>   
-                        @endforeach
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>    
                 </div>
             </div>
         </div>
     </div>
-    @endif   
-    @include('comun.front.carusel-items')    
-@endsection
+    <?php endif; ?>   
+    <?php echo $__env->make('comun.front.carusel-items', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>    
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.front.vertical', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH F:\laragon\www\SPMiguel\resources\views/front/articulos/ver.blade.php ENDPATH**/ ?>

@@ -6,13 +6,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title> @yield('titulo') | Sunpro Redes y Sistemas</title>
+        <title> <?php echo $__env->yieldContent('titulo'); ?> | Sunpro Redes y Sistemas</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">    
 
         <!--Bootstrap-->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/main.css') }}"> 
+        <link rel="stylesheet" href="<?php echo e(asset('css/app.css')); ?>">
+        <link rel="stylesheet" href="<?php echo e(asset('css/main.css')); ?>"> 
         <script>
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -27,29 +27,29 @@
     </head>
     <body>
         <section id="cabecera">      
-            @include('comun.front.cabecera')
-            @include('comun.front.menu')   
-            @include('comun.front.camino-migas')
+            <?php echo $__env->make('comun.front.cabecera', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            <?php echo $__env->make('comun.front.menu', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>   
+            <?php echo $__env->make('comun.front.camino-migas', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         </section>
         <section id="cuerpo">
             <div class="container-fluid bg-white">             
                 <div class="container ">
                     <div class="row">
                         <div class="col-12 col-sm-3 d-none d-sm-block border-right p-0">
-                            @include('comun.front.menu-lateral')                              
+                            <?php echo $__env->make('comun.front.menu-lateral', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>                              
                         </div>
                         <div class="col-12 col-sm-9">
-                            @yield("cuerpo")                            
+                            <?php echo $__env->yieldContent("cuerpo"); ?>                            
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <section id="pie">
-            @include('comun.front.footer')
+            <?php echo $__env->make('comun.front.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         </section>
         <!--JS-->
-        <script src="{{ asset('js/app.js') }}"></script>
-        <script src="{{ asset('js/main.js') }}"></script>
+        <script src="<?php echo e(asset('js/app.js')); ?>"></script>
+        <script src="<?php echo e(asset('js/main.js')); ?>"></script>
     </body>
-</html>
+</html><?php /**PATH F:\laragon\www\SPMiguel\resources\views/layouts/front/nav-left.blade.php ENDPATH**/ ?>
