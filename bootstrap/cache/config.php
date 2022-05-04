@@ -1,7 +1,7 @@
 <?php return array (
   'app' => 
   array (
-    'name' => 'Sunpro redes y sistemas',
+    'name' => 'Laravel',
     'env' => 'local',
     'debug' => true,
     'url' => 'http://localhost',
@@ -10,7 +10,7 @@
     'locale' => 'es',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:uaoY9HIFvzc+thDhbkl2/00SwST0rB1WR1QvX9g8AfQ=',
+    'key' => 'base64:tFsFMvZeFafNyYMSq9a1EvQ14TCp8zkbYympKSYPBgU=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -175,7 +175,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'F:\\laragon\\www\\SPMiguel\\storage\\framework/cache/data',
+        'path' => 'C:\\laragon\\www\\SPMiguel\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -214,7 +214,7 @@
         'endpoint' => NULL,
       ),
     ),
-    'prefix' => 'sunpro_redes_y_sistemas_cache',
+    'prefix' => 'laravel_cache',
   ),
   'database' => 
   array (
@@ -285,7 +285,7 @@
       'options' => 
       array (
         'cluster' => 'predis',
-        'prefix' => 'sunpro_redes_y_sistemas_database_',
+        'prefix' => 'laravel_database_',
       ),
       'default' => 
       array (
@@ -314,12 +314,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'F:\\laragon\\www\\SPMiguel\\storage\\app',
+        'root' => 'C:\\laragon\\www\\SPMiguel\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'F:\\laragon\\www\\SPMiguel\\storage\\app/public',
+        'root' => 'C:\\laragon\\www\\SPMiguel\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -365,13 +365,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'F:\\laragon\\www\\SPMiguel\\storage\\logs/laravel.log',
+        'path' => 'C:\\laragon\\www\\SPMiguel\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'F:\\laragon\\www\\SPMiguel\\storage\\logs/laravel.log',
+        'path' => 'C:\\laragon\\www\\SPMiguel\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -424,18 +424,18 @@
     'from' => 
     array (
       'address' => 'daniel@sunprored.es',
-      'name' => 'sunprored',
+      'name' => 'Daniel',
     ),
-    'encryption' => 'tls',
-    'username' => '111ed321d1b672',
-    'password' => '4c334ddb1d0480',
+    'encryption' => NULL,
+    'username' => NULL,
+    'password' => NULL,
     'sendmail' => '/usr/sbin/sendmail -bs',
     'markdown' => 
     array (
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'F:\\laragon\\www\\SPMiguel\\resources\\views/vendor/mail',
+        0 => 'C:\\laragon\\www\\SPMiguel\\resources\\views/vendor/mail',
       ),
     ),
     'log_channel' => NULL,
@@ -528,7 +528,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'F:\\laragon\\www\\SPMiguel\\storage\\framework/sessions',
+    'files' => 'C:\\laragon\\www\\SPMiguel\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -537,7 +537,7 @@
       0 => 2,
       1 => 100,
     ),
-    'cookie' => 'sunpro_redes_y_sistemas_session',
+    'cookie' => 'laravel_session',
     'path' => '/',
     'domain' => NULL,
     'secure' => false,
@@ -548,9 +548,9 @@
   array (
     'paths' => 
     array (
-      0 => 'F:\\laragon\\www\\SPMiguel\\resources\\views',
+      0 => 'C:\\laragon\\www\\SPMiguel\\resources\\views',
     ),
-    'compiled' => 'F:\\laragon\\www\\SPMiguel\\storage\\framework\\views',
+    'compiled' => 'C:\\laragon\\www\\SPMiguel\\storage\\framework\\views',
   ),
   'dompdf' => 
   array (
@@ -558,10 +558,10 @@
     'orientation' => 'portrait',
     'defines' => 
     array (
-      'font_dir' => 'F:\\laragon\\www\\SPMiguel\\storage\\fonts/',
-      'font_cache' => 'F:\\laragon\\www\\SPMiguel\\storage\\fonts/',
-      'temp_dir' => 'C:\\Users\\MIGUEL\\AppData\\Local\\Temp',
-      'chroot' => 'F:\\laragon\\www\\SPMiguel',
+      'font_dir' => 'C:\\laragon\\www\\SPMiguel\\storage\\fonts/',
+      'font_cache' => 'C:\\laragon\\www\\SPMiguel\\storage\\fonts/',
+      'temp_dir' => 'C:\\Users\\daniel\\AppData\\Local\\Temp',
+      'chroot' => 'C:\\laragon\\www\\SPMiguel',
       'enable_font_subsetting' => false,
       'pdf_backend' => 'CPDF',
       'default_media_type' => 'screen',
