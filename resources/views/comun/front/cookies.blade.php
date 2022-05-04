@@ -8,7 +8,7 @@
 
     <div class="row">
 
-        <div class="col-12 text-center py-3 bd-title">POLITICA DE COOKIES</div>
+        <div class="col-12 text-center py-3 bd-title">POLITICA DE COOKIES KEVIN</div>
 
     </div>
 
