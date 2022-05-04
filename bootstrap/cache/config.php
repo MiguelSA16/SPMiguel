@@ -1,7 +1,7 @@
 <?php return array (
   'app' => 
   array (
-    'name' => 'Laravel',
+    'name' => 'Sunpro redes y sistemas',
     'env' => 'local',
     'debug' => true,
     'url' => 'http://localhost',
@@ -10,7 +10,7 @@
     'locale' => 'es',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:tFsFMvZeFafNyYMSq9a1EvQ14TCp8zkbYympKSYPBgU=',
+    'key' => 'base64:uaoY9HIFvzc+thDhbkl2/00SwST0rB1WR1QvX9g8AfQ=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -214,7 +214,7 @@
         'endpoint' => NULL,
       ),
     ),
-    'prefix' => 'laravel_cache',
+    'prefix' => 'sunpro_redes_y_sistemas_cache',
   ),
   'database' => 
   array (
@@ -285,7 +285,7 @@
       'options' => 
       array (
         'cluster' => 'predis',
-        'prefix' => 'laravel_database_',
+        'prefix' => 'sunpro_redes_y_sistemas_database_',
       ),
       'default' => 
       array (
@@ -424,11 +424,11 @@
     'from' => 
     array (
       'address' => 'daniel@sunprored.es',
-      'name' => 'Daniel',
+      'name' => 'sunprored',
     ),
-    'encryption' => NULL,
-    'username' => NULL,
-    'password' => NULL,
+    'encryption' => 'tls',
+    'username' => '111ed321d1b672',
+    'password' => '4c334ddb1d0480',
     'sendmail' => '/usr/sbin/sendmail -bs',
     'markdown' => 
     array (
@@ -537,7 +537,7 @@
       0 => 2,
       1 => 100,
     ),
-    'cookie' => 'laravel_session',
+    'cookie' => 'sunpro_redes_y_sistemas_session',
     'path' => '/',
     'domain' => NULL,
     'secure' => false,
