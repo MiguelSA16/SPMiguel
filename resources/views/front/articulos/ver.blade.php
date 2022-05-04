@@ -123,44 +123,20 @@
                                                     <th class="text-uppercase ">
                                                         Precio:
                                                     </th>
-                                                    <th> 
+                                                    <!--Codigo antiguo-->
+                                                    <th class="text-primary"> 
                                                         @php
                                                             $pvp1 = number_format($articulo->pvp1,2);
                                                         @endphp
-
-                                                    @if ( precioCliente(Auth::user()->cliente_id,$articulo->codigo) != null)
-                                                        @if ($pvp1 <= precioCliente(Auth::user()->cliente_id,$articulo->codigo))
-                                                            <span class=" d-block">
-                                                                <!--<strike style="font-size: 14px;font-weight: normal;"  >-->
-                                                                     {{ number_format((precioCliente(Auth::user()->cliente_id,$articulo->codigo)*2),2)}}€
-                                                                <!--</strike>--> 
-                                                                     <small>und.</small>
-                                                            </span>                                                      
-                                                            
-                                                            <!--<span class=" text-danger">
-                                                                {{precioCliente(Auth::user()->cliente_id,$articulo->codigo)}}€ <small>und.</small> 
-                                                            </span>-->
+                                                        @if ($pvp1 == 0.00)
+                                                            <span class=" badge-warning badge-pill">
+                                                                Consultar precio
+                                                            </span>    
                                                         @else
-                                                            <span class=" d-block">
-                                                                <!--<strike style="font-size: 14px;font-weight: normal;" > -->
-                                                                    {{ $pvp1}}€
-                                                                <!--</strike> -->
-                                                                <small>und.</small>
-                                                            </span>                                                 
-                                                             <!--<span class=" text-danger">
-                                                                {{precioCliente(Auth::user()->cliente_id,$articulo->codigo)}}€ <small>und.</small> 
-                                                            </span>--> 
-                                                        @endif                                                
-                                                    @elseif ($pvp1 == 0.00)
-                                                        <span class=" badge-warning badge-pill">
-                                                            Consultar precio
-                                                        </span>  
-                                                    @else
-                                                            {{$pvp1}}€ <small>und.</small> 
-                                                    @endif                                         
-
-                                                        <!--<span class=" d-block">{{'Compro ='. precioCliente(Auth::user()->cliente_id,$articulo->codigo)}}</span>-->
+                                                            {{$pvp1}} € <small>und.</small> 
+                                                        @endif
                                                     </th>
+                                                     <!--Fin Codigo antiguo-->
                                                         
                                                     <th class="text-uppercase ">
                                                         stock:
@@ -188,8 +164,7 @@
                                                             @endif
                                                         @endif  
                                                     </th>
-                                                </tr>
-
+                                                </tr>                                                
                                             @elseif(Auth::user()->role_id == 4 || Auth::user()->role_id == 1)     
                                                 <tr class=" border-bottom">
                                                     <th class="text-uppercase ">
@@ -236,179 +211,95 @@
                 </div>
 
                 @if($longitudes->count() != 0)
-
                 <div class="col-6">
-
-                    <p class="subtitle pt-3 pb-2 font-weight-bold">                
-
+                    <p class="subtitle pt-3 pb-2 font-weight-bold">
                         Medidas Disponibles:
-
                     </p> 
-
                     @foreach ($longitudes as $longitud)
-
                         <a href="{{url('articulo/'.$longitud->slug.'/ver') }}" class="text-decoration-none">
-
                             <button class=" btn btn-outline-sunpro py-0 my-1">{{$longitud->longitud}}</button>
-
                         </a>
-
                     @endforeach
+                </div>
+                @endif
+                @if($anchos->count() != 0)
+                <div class=" col-6">
+                    <p class="subtitle pt-3 pb-2 font-weight-bold"> 
+                        Anchos Disponibles:
+                    </p> 
+                    @foreach ($anchos as $ancho)
+                        <a href="{{url('articulo/'.$ancho->slug.'/ver') }}" class="text-decoration-none">
+                            <button class=" btn btn-outline-primary py-0 my-1">{{$ancho->ancho}}</button>
+                        </a>
+                    @endforeach
+                </div>
 
+                @endif  
+                @if($colores->count() != 0)
+                <div class=" col-6">
+                    <p class="subtitle pt-3 pb-2 font-weight-bold"> 
+                        Colores Disponibles:
+                    </p> 
+                    @foreach ($colores as $color)
+                        <a href="{{url('articulo/'.$color->slug.'/ver') }}" class="text-decoration-none">
+                            <button class=" btn btn-outline-{{$color->color}} py-0 my-1">{{$color->color}}</button>
+                        </a>
+                    @endforeach
                 </div>
 
                 @endif
-
-                @if($anchos->count() != 0)
-
-                <div class=" col-6">
-
-                    <p class="subtitle pt-3 pb-2 font-weight-bold">                
-
-                        Anchos Disponibles:
-
-                    </p> 
-
-                    @foreach ($anchos as $ancho)
-
-                        <a href="{{url('articulo/'.$ancho->slug.'/ver') }}" class="text-decoration-none">
-
-                            <button class=" btn btn-outline-primary py-0 my-1">{{$ancho->ancho}}</button>
-
-                        </a>
-
-                    @endforeach
-
-                </div>
-
-                @endif                                        
-
-                @if($colores->count() != 0)
-
-                <div class=" col-6">
-
-                    <p class="subtitle pt-3 pb-2 font-weight-bold">                
-
-                        Colores Disponibles:
-
-                    </p> 
-
-                    @foreach ($colores as $color)
-
-                        <a href="{{url('articulo/'.$color->slug.'/ver') }}" class="text-decoration-none">
-
-                            <button class=" btn btn-outline-{{$color->color}} py-0 my-1">{{$color->color}}</button>
-
-                        </a>
-
-                    @endforeach
-
-                </div>
-
-                @endif                
-
                 <div class="col-12">
-
-                    <p class="subtitle pt-3 pb-2 font-weight-bold">                
-
+                    <p class="subtitle pt-3 pb-2 font-weight-bold">    
                         Descripcion:
-
                     </p> 
-
                     <span>
-
                         {!!$articulo->descripcion!!}
-
                     </span>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
 
 
     @if($art_relacionados->count() != 0)
-
     <div class="container-fluid py-4 bg-white">
-
         <div class="container">
-
             <div class="row">  
-
                 <div class="col-12">
-
-                    <p class="subtitle pb-2 font-weight-bold">                
-
+                    <p class="subtitle pb-2 font-weight-bold"> 
                         Otros Clientes Tambien Compraron:
-
                     </p> 
-
                     <div class="row">
-
-                        @foreach ($art_relacionados as $art_relacionado)                                             
-
-                            <div class="col-2 py-1 ">
-
+                        @foreach ($art_relacionados as $art_relacionado)
+                           <div class="col-2 py-1 ">
                                 <a href="{{url('articulo/'.$art_relacionado->slug.'/ver')}}" class=" text-decoration-none">  
-
                                     <div class="card border-success" data-toggle="tooltip" data-placement="top" title="{{$art_relacionado->nombre}}">
-
                                         <div class="card-imagen border-0">
-
                                             <img src="{{url('/images/articulos/'.$art_relacionado->imagen)}}" alt="{{$art_relacionado->nombre}}" class=" img-fluid p-2">
-
                                         </div>
-
                                         <div class="card-body p-2 bg-success text-center">
-
                                             @php
-
                                             if (strlen($art_relacionado->nombre) > 30) {
-
                                                 $nombre = substr($art_relacionado->nombre,0,30).'...';
-
                                             }else{
-
                                                 $nombre = $art_relacionado->nombre;
-
-                                            }                                               
+                                            }                                           
 
                                             @endphp
-
                                             <span class=" text-white " >
-
                                                 {{$nombre}}
-
                                             </span>
-
                                         </div>	
-
                                     </div>     
-
-                                </a>                      
-
-                            </div>                                                            
-
+                                </a>  
+                            </div>   
                         @endforeach
-
-                    </div>                   
-
+                    </div>    
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
     @endif   
-
-    
-
     @include('comun.front.carusel-items')    
-
 @endsection

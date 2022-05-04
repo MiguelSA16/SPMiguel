@@ -219,6 +219,8 @@ class FrontController extends Controller
         curl_setopt($cu, CURLOPT_POSTFIELDS, http_build_query(array('secret' => $clave, 'response' => $token)));
         curl_setopt($cu, CURLOPT_RETURNTRANSFER, true);
         $response = curl_exec($cu);
+
+        //return $response;
         curl_close($cu);
         
         $datos = json_decode($response, true);
@@ -292,7 +294,7 @@ class FrontController extends Controller
         if($datos['success'] == 1 && $datos['score'] >= 0.5){
             if($action == 'validarContactanos'){
                 //enviar Email
-                Mail::to('daniel@sunprored.es')->queue(new MessageReceived($message));
+                Mail::to('daniel@sunprored.es')->send( new MessageReceived($message));
 
                 //retornar a la misma pagina con mensaje flash
                 flash('Tu mensaje, se ha enviado correctamente. ')->success();
