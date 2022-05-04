@@ -1,8 +1,7 @@
-@extends('layouts.front.nav-left')
-@section('titulo')
-    {{$familia_actual->nomfam}} 
-@endsection
-@section('cuerpo')
+<?php $__env->startSection('titulo'); ?>
+    <?php echo e($familia_actual->nomfam); ?> 
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('cuerpo'); ?>
 <div class="container-fluid mt-3">
     <!-- Titulo -->
     <div class="row subrayar">
@@ -10,7 +9,8 @@
 
             <h1 class="title">
 
-                {{$familia_actual->nomfam}}
+                <?php echo e($familia_actual->nomfam); ?>
+
 
                 <small>
 
@@ -38,25 +38,25 @@
 
             
 
-        @foreach ($articulos as $item)
+        <?php $__currentLoopData = $articulos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
             <!-- Muestra los articulos -->
 
             <div class="col-12 col-md-4 mb-3 ">
 
-                <a href="{{url('articulo/'.$item->slug.'/ver') }}" class="text-decoration-none">                    
+                <a href="<?php echo e(url('articulo/'.$item->slug.'/ver')); ?>" class="text-decoration-none">                    
 
                     <div class="card">                        
 
                         <div class="card-imagen">
 
-                            <img src="{{asset('images/articulos/'.$item->imagen)}}"  alt="...">                            
+                            <img src="<?php echo e(asset('images/articulos/'.$item->imagen)); ?>"  alt="...">                            
 
                         </div>	
 
                         <!-- en oferta -->
 
-                        @if ($item->oferta=='SI')               
+                        <?php if($item->oferta=='SI'): ?>               
 
                         <div class="card-img-overlay">
 
@@ -68,7 +68,7 @@
 
                         </div>	
 
-                        @endif
+                        <?php endif; ?>
 
                         <!-- fin en oferta -->
 
@@ -76,11 +76,11 @@
 
                             <h5 class="card-title min-height-card titulo-articulo">
 
-                                {{$item->nombre}}       
+                                <?php echo e($item->nombre); ?>       
 
                             </h5>
 
-                            @if($item->art <= 1)
+                            <?php if($item->art <= 1): ?>
 
                             <button class="btn btn-gris btn-sm text-uppercase">
 
@@ -88,17 +88,17 @@
 
                             </button>
 
-                        @else
+                        <?php else: ?>
 
                         <button class="btn btn-warning btn-sm text-uppercase">
 
-                            {{$item->art}}                            
+                            <?php echo e($item->art); ?>                            
 
                             Medidas disponibles
 
                         </button>
 
-                        @endif
+                        <?php endif; ?>
 
 
 
@@ -106,19 +106,19 @@
 
                             <h6>
 
-                                Referencia: <span class="badge badge-ref size-13">{{$item->codigo}}</span>
+                                Referencia: <span class="badge badge-ref size-13"><?php echo e($item->codigo); ?></span>
 
                             </h6>
 
                             <!-- Precios Oferta -->
 
-                            @if ($item->oferta=='SI')
+                            <?php if($item->oferta=='SI'): ?>
 
                             <div class="price text-success">
 
                                 <h5 class=" font-weight-bold m-0">
 
-                                    {{$item->pvpoferta}} € <small>und.</small> 
+                                    <?php echo e($item->pvpoferta); ?> € <small>und.</small> 
 
                                     
 
@@ -126,7 +126,7 @@
 
                             </div>
 
-                            @endif	
+                            <?php endif; ?>	
 
                             <!-- Fin Precios Oferta -->
 
@@ -134,34 +134,34 @@
 
                             <!-- Precios Cliente -->
 
-                            @if (Route::has('login'))
+                            <?php if(Route::has('login')): ?>
 
-                                @auth
+                                <?php if(auth()->guard()->check()): ?>
 
-                                    @if (Auth::user()->role_id == 3 && $item->oferta=='NO' || Auth::user()->role_id == 1 && $item->oferta=='NO')
+                                    <?php if(Auth::user()->role_id == 3 && $item->oferta=='NO' || Auth::user()->role_id == 1 && $item->oferta=='NO'): ?>
 
                                     <div class="price text-success">
                                         <h5 class=" font-weight-bold m-0">
                                             <!--Codigo antiguo-->
-                                            @php
+                                            <?php
                                                 $pvp1 = number_format($item->pvp1,2);
-                                            @endphp
-                                            @if ($pvp1 == 0.00)
+                                            ?>
+                                            <?php if($pvp1 == 0.00): ?>
                                                 <span class=" badge-warning badge-pill">
                                                     Consultar precio
                                                 </span>    
-                                            @else
-                                                {{$pvp1}} € <small>und.</small> 
-                                            @endif    
+                                            <?php else: ?>
+                                                <?php echo e($pvp1); ?> € <small>und.</small> 
+                                            <?php endif; ?>    
                                             <!--Fin Codigo antiguo-->
                                         </h5> 
                                     </div>
 
-                                    @endif	
+                                    <?php endif; ?>	
 
-                                @endauth
+                                <?php endif; ?>
 
-                            @endif
+                            <?php endif; ?>
 
                             <!-- Fin Precios Cliente -->
 
@@ -187,15 +187,15 @@
 
                                     
 
-                                    @if ($item->pdf=='-')
+                                    <?php if($item->pdf=='-'): ?>
 
                                     <i class="fas fa-times text-danger pl-1" style="font-size:18px;"></i>
 
-                                    @else
+                                    <?php else: ?>
 
                                     <i class="fas fa-check text-success pl-1" style="font-size:18px;"></i>
 
-                                    @endif
+                                    <?php endif; ?>
 
 
 
@@ -219,13 +219,14 @@
 
             <!-- Fin Muestra los articulos -->
 
-        @endforeach
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
 
         <div class="col-12">
 
-            {!!$articulos->links()!!}
+            <?php echo $articulos->links(); ?>
+
 
         </div>
 
@@ -235,4 +236,5 @@
 
     
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.front.nav-left', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH F:\laragon\www\SPMiguel\resources\views/front/articulos/listar.blade.php ENDPATH**/ ?>
