@@ -128,11 +128,12 @@
                 </h5>
                 <div class="row">
                     <div class="col-md-3 ">
-                        <img src="{{asset('images/descargas/efb_catalogo2.png')}}"
+                        <img src="{{asset('images/descargas/efb_catalogo-22.png')}}"
                             style="max-height:150px;border: solid 1.2px;">
                     </div>
                     <div class="col-md-6 ">
-                        <a href="{{url('pdf/descargas/CATALOGO DE TECNOLOGIA DE RED-2.pdf')}}" target="_blank"
+                        <a href="{{url('pdf/descargas/CATALOGO DE TECNOLOGIA DE RED.pdf')}}" target="_blank"
+
                             class="text-decoration-none subtitle ">
                             <i class="far fa-file-pdf bg-pdf size-20 text-danger"></i>
                             Descargar
@@ -147,11 +148,12 @@
                 </h5>
                 <div class="row">
                     <div class="col-md-3 ">
-                        <img src="{{asset('images/descargas/catalogo-sunpro2.jpg')}}"
+                        <img src="{{asset('images/descargas/catalogo-sunpro-22.jpg')}}"
                             style="max-height:150px;border: solid 1.2px;">
                     </div>
                     <div class="col-md-6 ">
-                        <a href="{{url('pdf/descargas/catalogo.pdf')}}" target="_blank"
+                        <a href="{{url('pdf/descargas/Catalogo_sunpro.pdf')}}" target="_blank"
+
                             class="text-decoration-none subtitle ">
                             <i class="far fa-file-pdf bg-pdf size-20 text-danger"></i>
                             Descargar
@@ -419,6 +421,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6 mb-4">
                 <h5 class=" titulo mb-3">
                     EFB-SERVER
@@ -476,7 +479,6 @@
                 </div>
             </div>
         </div>
-
         <!--FIN DE FOLLETOS-->
 
         <!--MATERIAL INFORMATIVO-->
