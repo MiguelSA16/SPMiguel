@@ -132,8 +132,7 @@
                             style="max-height:150px;border: solid 1.2px;">
                     </div>
                     <div class="col-md-6 ">
-                        <a href="{{url('pdf/descargas/CATALOGO DE TECNOLOGIA DE RED.pdf')}}" target="_blank"
-
+                        <a href="{{url('pdf/descargas/CATALOGO DE TECNOLOGIA DE RED-2.pdf')}}" target="_blank"
                             class="text-decoration-none subtitle ">
                             <i class="far fa-file-pdf bg-pdf size-20 text-danger"></i>
                             Descargar
@@ -153,7 +152,6 @@
                     </div>
                     <div class="col-md-6 ">
                         <a href="{{url('pdf/descargas/Catalogo_sunpro.pdf')}}" target="_blank"
-
                             class="text-decoration-none subtitle ">
                             <i class="far fa-file-pdf bg-pdf size-20 text-danger"></i>
                             Descargar
